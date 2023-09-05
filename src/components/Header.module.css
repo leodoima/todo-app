@@ -1,0 +1,32 @@
+.header {
+    width: 100%;
+    height: 12.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    background: var(--Gray-700, #0D0D0D);
+}
+
+.description {
+
+    display: flex;
+    margin-left: 0.75rem;
+
+
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.first {
+    color: var(--Blue, #4EA8DE);
+}
+
+.last {
+    color: var(--PurpleDark, #5E60CE);
+}
