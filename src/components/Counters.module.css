@@ -1,0 +1,42 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+}
+
+.content p {
+    color: var(--Blue, #4EA8DE);
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content p+p {
+    color: var(--Purple, #8284FA);
+}
+
+.content p span {
+    display: flex;
+    padding: 0.125rem 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 999px;
+    background: var(--Gray-400, #333);
+
+    color: var(--Gray-200, #D9D9D9);
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
