@@ -3,14 +3,14 @@ import rocketLogo from '../assets/rocket-logo.svg';
 
 function Header() {
     return (
-        <header className={styles.header}>
+        <header className={styles.content}>
             <img src={rocketLogo} alt="logotipo" />
-            <div className={styles.description}>
-                <p className={styles.first}>to</p>
-                <p className={styles.last}>do</p>
+            <div>
+                <p>to</p>
+                <p>do</p>
             </div>
         </header>
     )
 }
 
-export default Header;
+export { Header };

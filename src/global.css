@@ -30,3 +30,7 @@ button {
     font-family: Inter, sans-serif;
     font-size: 0.875rem;
 }
+
+*:focus {
+    outline: none;
+}
