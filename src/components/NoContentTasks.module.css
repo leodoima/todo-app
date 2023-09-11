@@ -10,12 +10,12 @@
     border-radius: 8px;
     border-top: 1px solid var(--Grey-400, #333);
 
-    color: var(--Gray-300, #808080);
+    color: var(--gray-300, #808080);
     margin-top: 1.5rem;
 }
 
 .content p {
-    color: var(--Gray-300, #808080);
+    color: var(--gray-300, #808080);
     text-align: center;
     font-family: Inter;
     font-size: 16px;
@@ -25,7 +25,7 @@
 }
 
 .content p+p {
-    color: var(--Gray-300, #808080);
+    color: var(--gray-300, #808080);
     font-family: Inter;
     font-size: 16px;
     font-style: normal;

@@ -47,7 +47,6 @@ function CreateTask() {
                 <PlusCircle size={16} weight="bold" />
             </button>
         </form>
-
     );
 }
 
