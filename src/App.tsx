@@ -12,9 +12,7 @@ export interface TasksType {
   isResolved: boolean
 }
 
-const tasks: TasksType[] = [{
-  id: 'teste', description: 'teste', isResolved: true
-}];
+const tasks: TasksType[] = [];
 
 function App() {
 
