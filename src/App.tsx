@@ -1,17 +1,38 @@
-import { CreateTask } from "./components/CreateTask";
-import { Tasks } from "./components/Tasks";
-import { Header } from "./components/Header";
+import { CreateTask } from "./components/createTask/CreateTask";
+import { Tasks } from "./components/tasks/Tasks";
+import { Header } from "./components/header/Header";
+import { NoContentTasks } from "./components/noContentTasks/NoContentTasks";
+import { Counters } from "./components/counters/Counters";
 
 import "./App.modules.css";
+
+export interface TasksType {
+  id: string,
+  description: string,
+  isResolved: boolean
+}
+
+const tasks: TasksType[] = [{
+  id: 'teste', description: 'teste', isResolved: true
+}];
 
 function App() {
 
   return (
     <>
       <Header />
+
       <div className="contentPage">
         <CreateTask />
-        <Tasks />
+        <Counters />
+
+        {(tasks.length === 0) ? <NoContentTasks /> : tasks.map(task => {
+          return (
+            <Tasks
+              key={task.id}
+              description={task.description}
+              isResolved={task.isResolved} />);
+        })}
       </div>
     </>
   )

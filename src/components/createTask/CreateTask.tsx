@@ -1,17 +1,17 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './CreateTask.module.css';
 import { PlusCircle } from "@phosphor-icons/react";
+import { v4 as uuidv4 } from 'uuid';
 
 
 interface ITask {
-    id: number,
+    id: string,
     description: string,
-    resolved: boolean
+    isResolved: boolean
 }
 
 
 function CreateTask() {
-
     const [tasks, setTasks] = useState<ITask[]>([]);
     const [newTaskText, setNewTaskText] = useState('');
 
@@ -24,9 +24,9 @@ function CreateTask() {
         event.preventDefault();
 
         const newTask = {
-            id: tasks.length + 1,
+            id: uuidv4(),
             description: newTaskText,
-            resolved: false
+            isResolved: false
         }
 
         setTasks([...tasks, newTask]);

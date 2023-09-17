@@ -1,9 +1,9 @@
 .createTask {
     display: flex;
-    width: 46rem;
+    width: 100%;
+    max-width: 46rem;
     align-items: center;
     gap: 0.875rem;
-
     margin-top: -1.75rem;
 }
 
