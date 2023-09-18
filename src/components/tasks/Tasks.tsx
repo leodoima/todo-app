@@ -1,16 +1,17 @@
 import { Trash } from "@phosphor-icons/react";
 import styles from './Tasks.module.css';
+import { TaskType } from '../../App.tsx';
 
-function Tasks(props) {
+function Tasks({ id, description, isResolved }: TaskType) {
     return (
-        <div className={styles.content}>
-            <div>
-                <input type="checkbox" />
-                <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                <div className={styles.trash}>
-                    <Trash size={24} weight="bold" />
-                </div>
+        <div className={styles.content} key={id}>
+
+            <input type="checkbox" checked={isResolved} />
+            <p>{description}</p>
+            <div className={styles.trash}>
+                <Trash size={20} weight="bold" />
             </div>
+
         </div>
     );
 }

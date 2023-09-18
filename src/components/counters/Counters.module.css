@@ -3,6 +3,7 @@
     max-width: 46rem;
 
     border-bottom: 1px solid var(--Grey-400, #333);
+    margin-bottom: 1rem;
 }
 
 .content div {

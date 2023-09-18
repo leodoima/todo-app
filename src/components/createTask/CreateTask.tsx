@@ -4,15 +4,19 @@ import { PlusCircle } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from 'uuid';
 
 
-interface ITask {
+export interface NewTask {
     id: string,
     description: string,
     isResolved: boolean
 }
 
 
-function CreateTask() {
-    const [tasks, setTasks] = useState<ITask[]>([]);
+interface CreateTaskProps {
+    onCreateTask: (task: NewTask) => void;
+}
+
+
+function CreateTask({ onCreateTask }: CreateTaskProps) {
     const [newTaskText, setNewTaskText] = useState('');
 
 
@@ -29,7 +33,7 @@ function CreateTask() {
             isResolved: false
         }
 
-        setTasks([...tasks, newTask]);
+        onCreateTask(newTask);
         setNewTaskText('');
     }
 
@@ -41,6 +45,7 @@ function CreateTask() {
                 onChange={handleNewTaskText}
                 type=''
                 value={newTaskText}
+                required
             />
             <button type='submit'>
                 <p>Criar</p>
