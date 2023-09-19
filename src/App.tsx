@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Reorder } from "framer-motion"
 
 import { CreateTask, NewTask } from "./components/createTask/CreateTask";
 import { Tasks } from "./components/tasks/Tasks";
@@ -16,10 +17,8 @@ export interface TaskType {
 
 function App() {
 
-  const totalTasks = 12;
-  const checkedTasks = 5;
-
   const [tasks, setTasks] = useState<TaskType[]>([]);
+  const hasTasks = tasks.length > 0;
 
 
   function deleteTask(deleteTask: string) {
@@ -55,16 +54,27 @@ function App() {
         <CreateTask onCreateTask={createTask} />
         <Counters totalTasks={tasks.length} checkedTasks={tasks.filter(task => task.isResolved == true).length} />
 
-        {(tasks.length === 0) ? <NoContentTasks /> : tasks.map(task => {
-          return (
-            <Tasks
-              key={task.id}
-              taskType={task}
-              onDeleteTask={deleteTask}
-              onChangeStatusTask={changeStatusTask}
-            />);
-        })}
-      </div>
+
+        {hasTasks ? (
+          <Reorder.Group axis="y" as="ul" values={tasks} onReorder={setTasks}>
+            {tasks.map(task => (
+
+              <Reorder.Item key={task.id} value={task}>
+                <Tasks
+                  key={task.id}
+                  taskType={task}
+                  onDeleteTask={deleteTask}
+                  onChangeStatusTask={changeStatusTask}
+                />
+              </Reorder.Item>
+
+            ))}
+          </Reorder.Group>
+        ) : (
+          <NoContentTasks />
+        )}
+
+      </div >
     </>
   )
 }

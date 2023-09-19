@@ -27,7 +27,7 @@ function Tasks({ taskType, onDeleteTask, onChangeStatusTask }: TaskProps) {
     }
 
     return (
-        <li className={styles.content}>
+        <div className={styles.content}>
 
             <input id={taskType.id} type="checkbox" checked={taskType.isResolved} onChange={handlewChangeStatusTask} />
 
@@ -36,7 +36,7 @@ function Tasks({ taskType, onDeleteTask, onChangeStatusTask }: TaskProps) {
             <button id={taskType.id} className={styles.trash} onClick={handleDeleteTask}>
                 <Trash size={20} weight="bold" />
             </button>
-        </li>
+        </div>
     );
 }
 

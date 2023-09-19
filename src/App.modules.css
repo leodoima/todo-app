@@ -6,3 +6,15 @@
 
     width: 100%;
 }
+
+ul {
+    width: 100%;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
