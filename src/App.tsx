@@ -16,6 +16,9 @@ export interface TaskType {
 
 function App() {
 
+  const totalTasks = 12;
+  const checkedTasks = 5;
+
   const [tasks, setTasks] = useState<TaskType[]>([]);
 
 
@@ -50,7 +53,7 @@ function App() {
 
       <div className="contentPage">
         <CreateTask onCreateTask={createTask} />
-        <Counters />
+        <Counters totalTasks={tasks.length} checkedTasks={tasks.filter(task => task.isResolved == true).length} />
 
         {(tasks.length === 0) ? <NoContentTasks /> : tasks.map(task => {
           return (

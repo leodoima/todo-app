@@ -6,9 +6,24 @@ Aplicação para controle de tarefas a serem realizadas.
 
 </br>
 
-<img src="./public/ToDoApp.png" alt="Apresentacao app" max-width="200px" heigth="200px"/>
+<img src="./public/withoutTasks.png" alt="Apresentacao app" width="900px" heigth="200px"/>
+<img src="./public/withTasks.png" alt="Apresentacao app" width="900px" heigth="200px"/>
 
 </br>
+</br>
+
+
+
+### Recursos
+Descrição dos principais itens contidos no desenvolvimento da aplicação:
+
+* React
+* Vite
+* Typescript
+* CSS Modules
+
+Aplicando aqui conceitos de estado, imutabilidade, componentização, propriedade, comunicação entre componentes e outros.
+
 </br>
 
 ### Executar
