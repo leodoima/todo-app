@@ -23,7 +23,7 @@ Descrição dos principais itens contidos no desenvolvimento da aplicação:
 * CSS Modules
 * [Framer Motion](https://www.framer.com/motion/)
 
-Aplicando aqui conceitos de estado, imutabilidade, componentização, animação, propriedade, comunicação entre componentes e outros.
+Aplicando aqui conceitos de *estado, imutabilidade, componentização, animação, propriedade, comunicação entre componentes e outros*.
 
 </br>
 
