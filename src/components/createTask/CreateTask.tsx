@@ -1,8 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import styles from './CreateTask.module.css';
 import { PlusCircle } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from 'uuid';
 
+import styles from './CreateTask.module.css';
 
 export interface NewTask {
     id: string,

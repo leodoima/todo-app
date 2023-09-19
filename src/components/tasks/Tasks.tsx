@@ -1,18 +1,42 @@
+import { ChangeEvent, MouseEvent } from "react";
 import { Trash } from "@phosphor-icons/react";
-import styles from './Tasks.module.css';
+
 import { TaskType } from '../../App.tsx';
 
-function Tasks({ id, description, isResolved }: TaskType) {
+import styles from './Tasks.module.css';
+
+interface TaskProps {
+    taskType: TaskType,
+    onDeleteTask: (id: string) => void
+    onChangeStatusTask: (id: string, status: boolean) => void
+}
+
+function Tasks({ taskType, onDeleteTask, onChangeStatusTask }: TaskProps) {
+
+
+    function handlewChangeStatusTask(event: ChangeEvent<HTMLInputElement>) {
+        const idTask = event.target.id;
+        const statusTask = event.target.checked;
+
+        onChangeStatusTask(idTask, statusTask);
+    }
+
+    function handleDeleteTask(event: MouseEvent<HTMLButtonElement>) {
+        event.preventDefault;
+        onDeleteTask(event.currentTarget.id);
+    }
+
     return (
-        <div className={styles.content} key={id}>
+        <li className={styles.content}>
 
-            <input type="checkbox" checked={isResolved} />
-            <p>{description}</p>
-            <div className={styles.trash}>
+            <input id={taskType.id} type="checkbox" checked={taskType.isResolved} onChange={handlewChangeStatusTask} />
+
+            {(taskType.isResolved) ? <s>{taskType.description}</s> : <p>{taskType.description}</p>}
+
+            <button id={taskType.id} className={styles.trash} onClick={handleDeleteTask}>
                 <Trash size={20} weight="bold" />
-            </div>
-
-        </div>
+            </button>
+        </li>
     );
 }
 
